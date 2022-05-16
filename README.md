@@ -1,7 +1,7 @@
-# Google Code Scanner
+# Android Google Code Scanner
 The Google code scanner API provides a complete solution for scanning codes without requiring your app to request camera permission, while preserving user privacy. This is accomplished by delegating the task of scanning the code to Google Play services and returning only the scan results to your app. All image processing occurs on the device and Google doesn't store the results or image data.
 
- ![Google Code Scanner - Example](https://raw.githubusercontent.com/myinnos/Google-Code-Scanner/main/photo1652692783_1.jpeg)
+ ![Android-Google Code Scanner - Example](https://raw.githubusercontent.com/myinnos/Android-Google-Code-Scanner/main/photo1652692783_1.jpeg)
   
 #### Kindly use the following links to use this library:
 
@@ -68,9 +68,9 @@ scanner
 ```java
 String rawValue = barcode.getRawValue();
 ```
-##### Watch the code [here](https://github.com/myinnos/Google-Code-Scanner/blob/main/app/src/main/java/in/myinnos/googlecodescanner/MainActivity.java)
+##### Watch the code [here](https://github.com/myinnos/Android-Google-Code-Scanner/blob/main/app/src/main/java/in/myinnos/googlecodescanner/MainActivity.java)
 
-##### Any Queries? or Feedback, please let me know by opening a [new issue](https://github.com/myinnos/Google-Code-Scanner/issues/new)!
+##### Any Queries? or Feedback, please let me know by opening a [new issue](https://github.com/myinnos/Android-Google-Code-Scanner/issues/new)!
 
 ## Contact
 #### Prabhakar Thota
