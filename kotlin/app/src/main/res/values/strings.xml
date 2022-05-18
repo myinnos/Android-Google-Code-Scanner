@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GoogleCodeScanner</string>
+    <string name="dummy_content">SCAN\nCODE</string>
+</resources>
