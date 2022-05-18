@@ -38,21 +38,39 @@ How to use
 
 If you know which barcode formats you expect to read, you can improve the speed of the barcode detector by configuring it to only detect those formats. For example, to detect only Aztec code and QR codes, build a GmsBarcodeScannerOptions object as in the following example:
 
-```xml
+```java
+//**** java ****
 GmsBarcodeScannerOptions options = new GmsBarcodeScannerOptions.Builder()
     .setBarcodeFormats(
         Barcode.FORMAT_QR_CODE,
         Barcode.FORMAT_AZTEC)
     .build();
 ```
+```kotlin
+//**** kotlin ****
+val options = GmsBarcodeScannerOptions.Builder()
+                .setBarcodeFormats(
+                    Barcode.FORMAT_QR_CODE,
+                    Barcode.FORMAT_AZTEC
+                )
+                .build()
+```             
 **Get an instance of GmsBarcodeScanner**
 ```java
+//**** java ****
 GmsBarcodeScanner scanner = GmsBarcodeScanning.getClient(this);
 // Or with a configured options
 // GmsBarcodeScanner scanner = GmsBarcodeScanning.getClient(context, options);
 ```
+```kotlin
+//**** kotlin ****
+val scanner = GmsBarcodeScanning.getClient(this)
+// Or with a configured options
+// val scanner = GmsBarcodeScanning.getClient(this, options)
+```
 **Request a code scanning by calling startScan()**
 ```java
+//**** java ****
 scanner
     .startScan()
     .addOnSuccessListener(
@@ -64,11 +82,26 @@ scanner
           // Task failed with an exception
         });
 ```
+```kotlin
+//**** kotlin ****
+scanner.startScan()
+    .addOnSuccessListener { barcode ->
+        // Task completed successfully
+    }
+    .addOnFailureListener { e ->
+        // Task failed with an exception
+    }
+```
 **Handle the resulting Barcode**
 ```java
+//**** java ****
 String rawValue = barcode.getRawValue();
 ```
-##### Watch the code [here](https://github.com/myinnos/Android-Google-Code-Scanner/blob/main/app/src/main/java/in/myinnos/googlecodescanner/MainActivity.java)
+```kotlin
+//**** kotlin ****
+val rawValue: String? = barcode.rawValue
+```
+##### Watch the code [here (MainActivity.java)](https://github.com/myinnos/Android-Google-Code-Scanner/blob/main/app/src/main/java/in/myinnos/googlecodescanner/MainActivity.java) and ref [Google code scanner (Beta)](https://developers.google.com/ml-kit/code-scanner)
 
 ##### Any Queries? or Feedback, please let me know by opening a [new issue](https://github.com/myinnos/Android-Google-Code-Scanner/issues/new)!
 
