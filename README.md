@@ -1,6 +1,8 @@
 # Android Google Code Scanner
 The Google code scanner API provides a complete solution for scanning codes without requiring your app to request camera permission, while preserving user privacy. This is accomplished by delegating the task of scanning the code to Google Play services and returning only the scan results to your app. All image processing occurs on the device and Google doesn't store the results or image data.
 
+<a href="#"><img alt="Android Language Badge" src="https://badgen.net/badge/OS/Android?icon=https://raw.githubusercontent.com/androiddevnotes/awesome-jetpack-compose-android-apps/master/assets/android.svg&color=3ddc84"/></a>
+
  ![Android-Google Code Scanner - Example](https://raw.githubusercontent.com/myinnos/Android-Google-Code-Scanner/main/photo1652692783_1.jpeg)
   
 #### Kindly use the following links to use this library:
