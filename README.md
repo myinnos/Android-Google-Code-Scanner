@@ -9,7 +9,7 @@ The Google code scanner API provides a complete solution for scanning codes with
 
 In your top-level settings.gradle file, include Google's Maven repository and Maven central repository in under the dependencyResolutionManagement block:
 
-```java
+```kotlin
 dependencyResolutionManagement {
   repositories {
     google()
@@ -18,13 +18,13 @@ dependencyResolutionManagement {
 }
 ```
 Add the Google Play services dependency for the play-services-code-scanner SDK to your module's Gradle build file, which is commonly app/build.gradle:
-```java
+```kotlin
 dependencies {
   implementation 'com.google.android.gms:play-services-code-scanner:16.0.0-beta1'
 }
 ``` 
 You can configure your app to have Google Play services automatically download the scanner module to the device while your app is installed from the Play Store. If you skip this step, Google Play services will download the scanner module the first time it is used, if it has not already been installed for another use case.
-```java
+```xml
 <application ...>
   ...
   <meta-data
@@ -40,7 +40,7 @@ How to use
 
 If you know which barcode formats you expect to read, you can improve the speed of the barcode detector by configuring it to only detect those formats. For example, to detect only Aztec code and QR codes, build a GmsBarcodeScannerOptions object as in the following example:
 
-```java
+```kotlin
 //**** java ****
 GmsBarcodeScannerOptions options = new GmsBarcodeScannerOptions.Builder()
     .setBarcodeFormats(
