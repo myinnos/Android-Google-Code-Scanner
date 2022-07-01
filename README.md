@@ -40,14 +40,7 @@ How to use
 
 If you know which barcode formats you expect to read, you can improve the speed of the barcode detector by configuring it to only detect those formats. For example, to detect only Aztec code and QR codes, build a GmsBarcodeScannerOptions object as in the following example:
 
-```kotlin
-//**** java ****
-GmsBarcodeScannerOptions options = new GmsBarcodeScannerOptions.Builder()
-    .setBarcodeFormats(
-        Barcode.FORMAT_QR_CODE,
-        Barcode.FORMAT_AZTEC)
-    .build();
-```
+
 ```kotlin
 //**** kotlin ****
 val options = GmsBarcodeScannerOptions.Builder()
@@ -56,21 +49,40 @@ val options = GmsBarcodeScannerOptions.Builder()
                     Barcode.FORMAT_AZTEC
                 )
                 .build()
-```             
-**Get an instance of GmsBarcodeScanner**
+```   
 ```java
 //**** java ****
-GmsBarcodeScanner scanner = GmsBarcodeScanning.getClient(this);
-// Or with a configured options
-// GmsBarcodeScanner scanner = GmsBarcodeScanning.getClient(context, options);
+GmsBarcodeScannerOptions options = new GmsBarcodeScannerOptions.Builder()
+    .setBarcodeFormats(
+        Barcode.FORMAT_QR_CODE,
+        Barcode.FORMAT_AZTEC)
+    .build();
 ```
+
+**Get an instance of GmsBarcodeScanner**
 ```kotlin
 //**** kotlin ****
 val scanner = GmsBarcodeScanning.getClient(this)
 // Or with a configured options
 // val scanner = GmsBarcodeScanning.getClient(this, options)
 ```
+```java
+//**** java ****
+GmsBarcodeScanner scanner = GmsBarcodeScanning.getClient(this);
+// Or with a configured options
+// GmsBarcodeScanner scanner = GmsBarcodeScanning.getClient(context, options);
+```
 **Request a code scanning by calling startScan()**
+```kotlin
+//**** kotlin ****
+scanner.startScan()
+    .addOnSuccessListener { barcode ->
+        // Task completed successfully
+    }
+    .addOnFailureListener { e ->
+        // Task failed with an exception
+    }
+```
 ```java
 //**** java ****
 scanner
@@ -84,24 +96,14 @@ scanner
           // Task failed with an exception
         });
 ```
-```kotlin
-//**** kotlin ****
-scanner.startScan()
-    .addOnSuccessListener { barcode ->
-        // Task completed successfully
-    }
-    .addOnFailureListener { e ->
-        // Task failed with an exception
-    }
-```
 **Handle the resulting Barcode**
-```java
-//**** java ****
-String rawValue = barcode.getRawValue();
-```
 ```kotlin
 //**** kotlin ****
 val rawValue: String? = barcode.rawValue
+```
+```java
+//**** java ****
+String rawValue = barcode.getRawValue();
 ```
 ##### Watch the code [here (MainActivity.java)](https://github.com/myinnos/Android-Google-Code-Scanner/blob/main/app/src/main/java/in/myinnos/googlecodescanner/MainActivity.java) and ref [Google code scanner (Beta)](https://developers.google.com/ml-kit/code-scanner)
 
